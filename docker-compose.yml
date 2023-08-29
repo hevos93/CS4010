@@ -53,6 +53,7 @@ services:
     container_name: jupyter
     hostname: jupyter
     restart: unless-stopped
+    entrypoint: start-notebook.sh --NotebookApp.token=''
     ports:
       - "8888:8888"
     volumes:
