@@ -14,11 +14,12 @@ services:
       - SPARK_USER=spark
     ports:
       - '8080:8080'
+      - '8081:8081'
       - '7077:7077'
       - '4040:4040'
     volumes:
-      - "./container-data/sparkData:/opt/spark:rw"
-
+      #- "./container-data/sparkData:/opt/spark:rw"
+      - "/var/CS4010/container-data/jupyterData/Spark:/home/jovyan/Spark/:rw"
   spark-worker:
     image: docker.io/bitnami/spark:3.4
     environment:
@@ -31,6 +32,8 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
       - SPARK_USER=spark
+    volumes:
+      - "/var/CS4010/container-data/jupyterData/Spark:/home/jovyan/Spark/:rw"
     depends_on:
       - spark
 
@@ -59,6 +62,19 @@ services:
     volumes:
       - "./container-data/jupyterData:/home/jovyan"
     
+  grafana:
+    image: grafana/grafana-oss:10.0.0
+    container_name: grafana
+    hostname: grafana
+    restart: unless-stopped
+    user: "0:0"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./container-data/grafanaData:/var/lib/grafana"
+    environment:
+      - "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=meln5674-mongodb-community"
+      - "GF_INSTALL_PLUGINS=https://github.com/meln5674/grafana-mongodb-community-plugin/releases/download/v0.2.0%2Brc3/meln5674-mongodb-community.zip;meln5674-mongodb-community"
 
   #mongo-kafka-connect:
   #  build: .
