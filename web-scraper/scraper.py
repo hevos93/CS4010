@@ -8,47 +8,56 @@ from time import sleep
 
 # Constants
 URL="https://www.vegvesen.no/trafikkdata/api/"
-TIME_FORMAT = "%Y-%m-%dT%H:%M:%S+02:00"
+QUERY_TIME_FORMAT = "%Y-%m-%dT%H:%M:%S+02:00"
+TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 END_TIME = datetime.datetime(year=2023, month=8, day=30, hour=0, minute=0, second=0)
 TRPIDS = ["29403V625517","71241V2460301", "64557V625518", "29852V2460300", "73840V2041694"]
 QUERY = gql(
     """
     query getTrafficData($TRPID: String!, $fromTime: ZonedDateTime!, $toTime: ZonedDateTime!) {
-        trafficData(trafficRegistrationPointId: $TRPID){
-            trafficRegistrationPoint {
-            id
+     trafficData(trafficRegistrationPointId: $TRPID) {
+    trafficRegistrationPoint {
+      id
+      location {
+        coordinates {
+          latLon {
+            lon
+            lat
+          }
         }
-                volume {
-                byHour(
-                    from: $fromTime
-                    to: $toTime
-                ){
-                edges {
-                    node {
-                        from
-                        to
-                        total {
-                            coverage {
-                                percentage
-                            }
-                            volumeNumbers {
-                                volume
-                            }
-                        }
-                    }
-                }
-            }
-            }
+        roadReference {
+          shortForm
         }
+      }
+    }
+    volume {
+      byHour(from: $fromTime, to: $toTime) {
+        edges {
+          node {
+            from
+            to
+            total {
+              coverage {
+                percentage
+              }
+              volumeNumbers {
+                volume
+              }
+            }
+          }
+        }
+      }
+    }
+  }
     }
 """
 )
 
 # Functions 
 def plusFour(original_date: str):
-    timedate_date = datetime.datetime.strptime(original_date, TIME_FORMAT)
+    timedate_date = datetime.datetime.strptime(original_date, QUERY_TIME_FORMAT)
     plusfive_date = timedate_date + datetime.timedelta(days=4)
-    string_plusfive = plusfive_date.strftime(TIME_FORMAT)
+    string_plusfive = plusfive_date.strftime(QUERY_TIME_FORMAT)
     return string_plusfive
 
 
@@ -62,9 +71,13 @@ counter = 0
 for TRPID in TRPIDS:
     dataset = []
     datetime_fromTime = datetime.datetime(year=2020, month=1, day=1, hour=0, minute=0, second=0)
-    query_fromTime = datetime_fromTime.strftime(TIME_FORMAT)
-    datetime_toTime = datetime.datetime(year=2020, month=1, day=5, hour=0, minute=0, second=0)
-    query_toTime = datetime_toTime.strftime(TIME_FORMAT)
+    query_fromTime = datetime_fromTime.strftime(QUERY_TIME_FORMAT)
+    datetime_toTime = datetime.datetime(year=2020, month=1, day=4, hour=0, minute=0, second=0)
+    query_toTime = datetime_toTime.strftime(QUERY_TIME_FORMAT)
+
+    #print(datetime_fromTime.tzinfo)
+    #print(query_fromTime)
+    #print(query_toTime)
     
     limit = False
 
@@ -76,16 +89,28 @@ for TRPID in TRPIDS:
             "toTime": query_toTime
         }
         result = client.execute(QUERY, variable_values=params)
+
+        try: 
+            id = result["trafficData"]["trafficRegistrationPoint"]["id"]
+            lon = result["trafficData"]["trafficRegistrationPoint"]["location"]["coordinates"]["latLon"]["lon"]
+            lat = result["trafficData"]["trafficRegistrationPoint"]["location"]["coordinates"]["latLon"]["lat"]
+            shortForm = result["trafficData"]["trafficRegistrationPoint"]["location"]["roadReference"]["shortForm"]
+        except TypeError as e:
+            print("ERROR: ", e)
+            continue
+
         for item in result["trafficData"]["volume"]["byHour"]["edges"]:
             try:
-                fromTime = item["node"]["from"]
-                toTime = item["node"]["to"]
+                fromTime = item["node"]["from"].replace("T", " ").split("+")[0]
+                toTime = item["node"]["to"].replace("T", " ").split("+")[0]
                 coverage = item["node"]["total"]["coverage"]["percentage"]
                 volume = item["node"]["total"]["volumeNumbers"]["volume"]
             except TypeError as e:
                 print("ERROR: " , e)
                 continue
-            data = [fromTime, toTime, coverage, volume]
+            #print(fromTime)
+            #print(toTime)
+            data = [id, shortForm, fromTime, toTime, coverage, volume, lon, lat]
             dataset.append(data)
         
         query_fromTime = plusFour(query_fromTime)
@@ -96,11 +121,11 @@ for TRPID in TRPIDS:
             "toTime": query_toTime
         }
 
-        check_fromTime = datetime.datetime.strptime(query_fromTime, TIME_FORMAT)
+        check_fromTime = datetime.datetime.strptime(query_fromTime, QUERY_TIME_FORMAT)
         if check_fromTime > END_TIME:
             limit = True
 
-        sleep(0.25) # This is here so the connection is not dropped at the server end.
+        sleep(1) # This is here so the connection is not dropped at the server end.
         counter = counter + 1
 
-    pandas.DataFrame(dataset).to_csv(TRPID+".csv", header = ["fromTime", "toTime", "coverage", "volume"], index=False)
+    pandas.DataFrame(dataset).to_csv(TRPID+".csv", header = ["trpid", "roadReference", "fromTime", "toTime", "coverage", "volume", "lon", "lat"], index=False)
