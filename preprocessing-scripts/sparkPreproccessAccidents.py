@@ -5,14 +5,12 @@ from datetime import datetime
 
 def lon(x):
     # Define the source (EPSG:5973) and target (EPSG:4326) projections
-    print(x.Lon)
-
     src_projection = CRS.from_string("EPSG:5973")
     dst_projection = CRS.from_string("EPSG:4326")
 
     # Use pyproj to perform the coordinate transformation
     transformer = Transformer.from_crs(src_projection, dst_projection)
-    lon, lat = transformer.transform(x.Lon,0)
+    lon, lat = transformer.transform(x,0)
 
     # Print the converted coordinates in EPSG:4326
     return lon
@@ -43,8 +41,6 @@ df = df.withColumn("LON", substring_index(df["COORDINATES"], " ", 1))
 df = df.withColumn("COORDINATES", substring_index(df["COORDINATES"], " ", -2))
 df = df.withColumn("LAT", substring_index(df["COORDINATES"], " ", 1))
 
-#start_date = datetime(year=2020) 
-
 # Select columns to keep
 columns_to_keep = ['VEGSYSTEMREFERANSE', 'TIMESTAMP', 'FARTSGRENSE (KM/H)', 'VÆRFORHOLD', 'FØREFORHOLD', 'LYSFORHOLD', 'VEGBELYSNING (NY)', 'VEGBREDDE (M)', 'VEGTYPE', 'KJØREFELTTYPE', 'LON', 'LAT']
 df = df.select(*columns_to_keep)
@@ -67,15 +63,6 @@ name_mapping = {
 
 # Use the select operation with alias to rename multiple columns
 df = df.select([df[column].alias(new_name) for column, new_name in name_mapping.items()])
-
-
-
-#df.show(truncate=False)
-updated_df = df.rdd.map(lambda x: lon(x))
-updated_df.show()
-
-#x = 262565.047
-#y = 6649542.024
 
 # Write dataframe to csv (Converted to pandas dataframe to avoid creating the csv as a folder)
 #df.toPandas().to_csv("../datasets/accidents.csv", index=False)
