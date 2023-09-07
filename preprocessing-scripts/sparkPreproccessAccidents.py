@@ -43,7 +43,9 @@ df = df.withColumn("LON", substring_index(df["COORDINATES"], " ", 1))
 df = df.withColumn("COORDINATES", substring_index(df["COORDINATES"], " ", -2))
 df = df.withColumn("LAT", substring_index(df["COORDINATES"], " ", 1))
 
-#start_date = datetime(year=2020) 
+start_date = datetime(year=2020, month=1, day=1, hour=0, minute=0, second=0, microsecond=0) #, tzinfo="Europe/Oslo") 
+
+df = df.filter(col("TIMESTAMP") >= start_date)
 
 # Select columns to keep
 columns_to_keep = ['VEGSYSTEMREFERANSE', 'TIMESTAMP', 'FARTSGRENSE (KM/H)', 'VÆRFORHOLD', 'FØREFORHOLD', 'LYSFORHOLD', 'VEGBELYSNING (NY)', 'VEGBREDDE (M)', 'VEGTYPE', 'KJØREFELTTYPE', 'LON', 'LAT']
@@ -70,9 +72,7 @@ df = df.select([df[column].alias(new_name) for column, new_name in name_mapping.
 
 
 
-#df.show(truncate=False)
-updated_df = df.rdd.map(lambda x: lon(x))
-updated_df.show()
+df.show(100, truncate=False)
 
 #x = 262565.047
 #y = 6649542.024
