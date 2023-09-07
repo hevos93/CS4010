@@ -1,3 +1,5 @@
 .env
 container-data/
 test/
+.DS_Store
+datasets/.DS_Store
