@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
 
 # Pyspark session
 spark = SparkSession.builder.appName("roadauthorityPreprocessCsv").master("local[*]").getOrCreate()
@@ -6,16 +7,23 @@ spark = SparkSession.builder.appName("roadauthorityPreprocessCsv").master("local
 # Read the csv file, try to infer the schema
 df = spark.read.option("header", True).csv("../raw-data/105_fartsgrense-eksport.csv", inferSchema = True, sep=";")
 
-# Select columns to keep
-columns_to_keep = ['VEGSYSTEMREFERANSE','STARTDATO', 'SLUTTDATO', 'FARTSGRENSE (KM/H)']
-df = df.select(*columns_to_keep)
+# Filtering on active speed limits
+df = df.filter(df.SLUTTDATO.isNull())
 
-# Rename columns
+# Splitting out speed limit meter locations
+df = df.filter(~ df.VEGSYSTEMREFERANSE.like("%KD%"))
+df = df.filter(~ df.VEGSYSTEMREFERANSE.like("%SD%"))
+df = df.withColumn("LENGDE", split(df.VEGSYSTEMREFERANSE, 'RV162 S1D1 m')[1])
+df = df.withColumn("LENGDE", split(df.LENGDE, '-'))
+df = df.withColumn("METER_TIL", df.LENGDE[1])
+df = df.withColumn("METER_FRA", df.LENGDE[0])
+
+# Select and rename columns
 name_mapping = {
     "VEGSYSTEMREFERANSE": "Vegreferanse",
-    "STARTDATO": "Startdato",
-    "SLUTTDATO": "Sluttdato",
-    "FARTSGRENSE (KM/H)": "Fartsgrense"
+    "FARTSGRENSE (KM/H)": "Fartsgrense",
+    "METER_FRA": "Meter_Fra",
+    "METER_TIL": "Meter_Til"
 }
 
 # Use the select operation with alias to rename multiple columns
