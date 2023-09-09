@@ -44,6 +44,7 @@ name_mapping = {
 df = df.select([df[column].alias(new_name) for column, new_name in name_mapping.items()])
 
 
+df.show(5)
 # Write dataframe to csv (Converted to pandas dataframe to avoid creating the csv as a folder)
 df.toPandas().to_csv("../datasets/accidents.csv", index=False)
 
