@@ -48,7 +48,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - "./container-data/mongoData:/data/db:rw"
+      - "mongoData:/data/db:rw"
 
 
   jupyter:
@@ -82,3 +82,8 @@ services:
   #    - "8083:8083"
   #  depends_on:
   #    - kafka
+
+
+volumes:
+  mongoData:
+    external: True
