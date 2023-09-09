@@ -26,8 +26,8 @@ lat_list_converted = []
 
 while counter < len(lon_list):
     result = convert_gps(lon_list[counter], lat_list[counter])
-    lon_list_converted.append(result[0]) 
-    lat_list_converted.append(result[1]) 
+    lon_list_converted.append(result[1]) 
+    lat_list_converted.append(result[0]) 
     counter = counter + 1
 
 df['Lon'] = pd.Series(lon_list_converted)
@@ -35,3 +35,4 @@ df['Lat'] = pd.Series(lat_list_converted)
 
 # Save to csv
 df.to_csv(filename, index=False, quoting=1)
+print(df.head(5))
