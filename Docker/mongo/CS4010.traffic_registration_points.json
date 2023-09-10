@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "64fd64496e878c0baee6b515"
+  },
+  "trpid": "29403V625517",
+  "road_reference": "RV162 S1D1 m2975",
+  "name": "VATERLANDTUNNELEN",
+  "lon": {
+    "$numberDouble": "10.7493"
+  },
+  "lat": {
+    "$numberDouble": "59.916004"
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd644a6e878c0baee6b516"
+  },
+  "trpid": "64557V625518",
+  "road_reference": "RV162 S1D1 m4949",
+  "name": "MUNKEDAMSVEIEN",
+  "lon": {
+    "$numberDouble": "10.725753"
+  },
+  "lat": {
+    "$numberDouble": "59.911418"
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd644b6e878c0baee6b517"
+  },
+  "trpid": "73840V2041694",
+  "road_reference": "RV162 S1D1 m2015",
+  "name": "ØSTRE TANGENT",
+  "lon": {
+    "$numberDouble": "10.760802"
+  },
+  "lat": {
+    "$numberDouble": "59.910064"
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd644b6e878c0baee6b518"
+  },
+  "trpid": "71241V2460301",
+  "road_reference": "RV162 S1D1 m827",
+  "name": "KONG HÅKON 5.S GT NORDGÅENDE",
+  "lon": {
+    "$numberDouble": "10.761554"
+  },
+  "lat": {
+    "$numberDouble": "59.905905"
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd644c6e878c0baee6b519"
+  },
+  "trpid": "29852V2460300",
+  "road_reference": "RV162 S1D1 m1064",
+  "name": "KONG HÅKON 5.S GT SYDGÅENDE",
+  "lon": {
+    "$numberDouble": "10.761306"
+  },
+  "lat": {
+    "$numberDouble": "59.905927"
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  }
+}]

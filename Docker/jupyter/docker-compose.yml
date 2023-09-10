@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  jupyter:
+    image: cs4010-jupyter
+    container_name: jupyter
+    hostname: jupyter
+    restart: unless-stopped
+    entrypoint: start-notebook.sh --NotebookApp.token=''
+    ports:
+      - "8888:8888"
