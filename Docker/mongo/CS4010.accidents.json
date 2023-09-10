@@ -1,0 +1,556 @@
+[{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee77"
+  },
+  "road_reference": "RV162 S1D1 m2472 KD1 m40",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1597666620000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_width": "15,4",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.75370462750887"
+  },
+  "lat": {
+    "$numberDouble": "59.912271465439"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee78"
+  },
+  "road_reference": "RV162 S1D1 m572",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1596783060000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.760100208019608"
+  },
+  "lat": {
+    "$numberDouble": "59.9037207739809"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee79"
+  },
+  "road_reference": "RV162 S1D1 m2472 KD1 m89",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1579038600000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, nedbør",
+  "road_conditions": "Våt, bar veg",
+  "lighting_conditions": "Mørkt med vegbelysning",
+  "road_lights": "Ja",
+  "road_width": "15,4",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.754181391475317"
+  },
+  "lat": {
+    "$numberDouble": "59.91215798596863"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee7a"
+  },
+  "road_reference": "RV162 S1D1 m1355",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1590762480000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ukjent",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.759686077233697"
+  },
+  "lat": {
+    "$numberDouble": "59.903445162193236"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee7b"
+  },
+  "road_reference": "RV162 S1D1 m4196",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1581072900000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Våt, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_width": "10,6",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.731668793132876"
+  },
+  "lat": {
+    "$numberDouble": "59.91495970650145"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee7c"
+  },
+  "road_reference": "RV162 S1D1 m3878",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1596928200000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "Ukjent",
+  "road_conditions": "Ukjent",
+  "lighting_conditions": "Tussmørke, skumring",
+  "road_lights": "Ukjent",
+  "road_width": "16,5",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.735404657885523"
+  },
+  "lat": {
+    "$numberDouble": "59.9173511982586"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee7d"
+  },
+  "road_reference": "RV162 S1D1 m0 KD1 m30",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1593746760000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.755689174919725"
+  },
+  "lat": {
+    "$numberDouble": "59.89888551229434"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee7e"
+  },
+  "road_reference": "RV162 S1D1 m4383",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1593585060000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_width": "8",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Kollektivfelt",
+  "lon": {
+    "$numberDouble": "10.730999349370787"
+  },
+  "lat": {
+    "$numberDouble": "59.91407431454162"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee7f"
+  },
+  "road_reference": "RV162 S1D1 m1329",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1591405920000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Våt, bar veg",
+  "lighting_conditions": "Tussmørke, skumring",
+  "road_lights": "Ukjent",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.759805464340214"
+  },
+  "lat": {
+    "$numberDouble": "59.903672748268356"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee80"
+  },
+  "road_reference": "RV162 S1D1 m3443",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1593089220000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Mørkt med vegbelysning",
+  "road_lights": "Ja",
+  "road_width": "19,9",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.741203697101172"
+  },
+  "lat": {
+    "$numberDouble": "59.9163137567185"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee81"
+  },
+  "road_reference": "RV162 S1D1 m2312 KD7 m7",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1629585120000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Mørkt med vegbelysning",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.758185781957152"
+  },
+  "lat": {
+    "$numberDouble": "59.912150910701"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee82"
+  },
+  "road_reference": "RV162 S1D1 m938",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1617961440000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.762073618231282"
+  },
+  "lat": {
+    "$numberDouble": "59.90684081255984"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee83"
+  },
+  "road_reference": "RV162 S1D1 m974",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1635830700000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "Ukjent",
+  "road_conditions": "Ukjent",
+  "lighting_conditions": "Ukjent",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.76181185098513"
+  },
+  "lat": {
+    "$numberDouble": "59.90669143912908"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee84"
+  },
+  "road_reference": "RV162 S1D1 m4875",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1615544460000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_width": "10,9",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.7265728758466"
+  },
+  "lat": {
+    "$numberDouble": "59.91193132884702"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee85"
+  },
+  "road_reference": "RV162 S1D1 m2324",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1639236000000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Våt, bar veg",
+  "lighting_conditions": "Mørkt med vegbelysning",
+  "road_lights": "Ja",
+  "road_width": "14",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.75699791565653"
+  },
+  "lat": {
+    "$numberDouble": "59.91163787255267"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee86"
+  },
+  "road_reference": "RV162 S1D1 m983",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1651169160000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.761762766312527"
+  },
+  "lat": {
+    "$numberDouble": "59.90661554253446"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee87"
+  },
+  "road_reference": "RV162 S1D1 m5233",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1659695160000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_width": "14,5",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.721084998414751"
+  },
+  "lat": {
+    "$numberDouble": "59.910880521074276"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee88"
+  },
+  "road_reference": "RV162 S1D1 m1364",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1656524220000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_type": "Motorveg",
+  "lane_type": "Flettefelt",
+  "lon": {
+    "$numberDouble": "10.759646840245452"
+  },
+  "lat": {
+    "$numberDouble": "59.9033624515127"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee89"
+  },
+  "road_reference": "RV162 S1D1 m2778 KD1 m257",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1655902140000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Dagslys",
+  "road_lights": "Ja",
+  "road_width": "10",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.752553318502128"
+  },
+  "lat": {
+    "$numberDouble": "59.914451065156875"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee8a"
+  },
+  "road_reference": "RV162 S1D1 m0 KD1 m35",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1657488720000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Mørkt med vegbelysning",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Ukjent",
+  "lon": {
+    "$numberDouble": "10.755736789150362"
+  },
+  "lat": {
+    "$numberDouble": "59.8989293089773"
+  }
+},
+{
+  "_id": {
+    "$oid": "64fd64316e878c0baee4ee8b"
+  },
+  "road_reference": "RV162 S1D1 m2198",
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1647143640000"
+    }
+  },
+  "speed_limit": {
+    "$numberInt": "50"
+  },
+  "weather": "God sikt, opphold",
+  "road_conditions": "Tørr, bar veg",
+  "lighting_conditions": "Mørkt med vegbelysning",
+  "road_lights": "Ja",
+  "road_type": "Vanlig veg/gate",
+  "lane_type": "Vanlig kjørefelt",
+  "lon": {
+    "$numberDouble": "10.757898010960123"
+  },
+  "lat": {
+    "$numberDouble": "59.91096267701997"
+  }
+}]

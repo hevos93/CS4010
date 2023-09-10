@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mongo:
+    image: mongo:7.0.0
+    container_name: mongo
+    hostname: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+
+  mongo-seed:
+    image: mongo-seed
+    links:
+      - mongo

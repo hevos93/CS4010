@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+  mongo:
+    image: mongo:7.0.0
+    container_name: mongodb
+    hostname: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+
+  mongo-seed:
+    build: ./mongo
+    container_name: mongo-seed
+    links:
+      - mongo
+
+  grafana:
+    build: ./grafana
+    container_name: grafana
+    hostname: grafana
+    restart: unless-stopped
+    user: "0:0"
+    ports:
+      - "3000:3000"
+    environment:
+      - "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=meln5674-mongodb-community"
+      - "GF_INSTALL_PLUGINS=https://github.com/meln5674/grafana-mongodb-community-plugin/releases/download/v0.2.0%2Brc3/meln5674-mongodb-community.zip;meln5674-mongodb-community"
+      #- "GF_AUTH_ANONYMOUS_ENABLED=true"
+
+  jupyter:
+    build: ./jupyter
+    container_name: jupyter
+    hostname: jupyter
+    restart: unless-stopped
+    entrypoint: start-notebook.sh --NotebookApp.token=''
+    ports:
+      - "8888:8888"
