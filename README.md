@@ -9,6 +9,10 @@ Our problem statement is ...
 - [Setup Guide](#setup-guide)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+- [Usage](#usage)
+  - [Grafana](#grafana)
+  - [Jupyter Notebook](#jupyter-notebook)
+  - [MongoDB](#mongodb)
 - [Tools and Technologies](#tools-and-technologies)
 - [Traffic Registration Points](#traffic-registration-points)
 
@@ -65,13 +69,13 @@ There are several containers that should be up and running.
 | spark | bitnami/spark:3.4 | Spark master | http://localhost:8080 |
 | spark-worker | bitnami/spark:3.4 | Spark master, this container can be scaled into multiple containers | None |
 
-## Usage
+# Usage
 
 After you have confirmed that the containers are running, you can start to use the containers.
 
-### Grafana
+## Grafana
 
-#### Logging in
+### Logging in
 
 Go to http://localhost:3000 in your web browser. You are then greeted by a sign-in page.
 
@@ -86,7 +90,7 @@ After logging in you are prompted to change the password, you can do so if you l
 
 After completing the log in you should be greeted with the correct dashboard.
 
-#### Using the dashboard
+### Using the dashboard
 
 There are several graphs and maps in this dashboard, you can look at each of them by scrolling up and down. With the maps you can drag the map around and zoom in and out if you find something interesting. There are several dots around, by hovering and pressing theses you will find additional information.
 
@@ -107,12 +111,23 @@ To look at the queries used towards MongoDB you need to press the options in the
 
 ![Graph Settings](media/grafana-graph-settings.png)
 
-### Jupyter Notebook
+There is one global variable to the Traffic dashboard which can be changed. This is which Traffic Registration Point the dashboard focus on. This can be changed in the upper left corner.
+
+![TRP Variable](media/grafana-trp-variable.png)
+
+## Jupyter Notebook
 
 To access the notebook, navigate to http://localhost:8888/lab in you web browser.
 In the list to the left you will see Spark.ipynb, this is the python file used to connect to the database, transform data and insert the datasets. There is also a folder called "Datasets" which contains CSV files.
 
 ![Jupyter](media/jupyter.png)
+
+
+## MongoDB
+
+To access MongoDB you need to use a NoSQL viewer, such as "MongoDB Compass" or "NoSQL Booster for MongoDB" and connect to mongodb://localhost:27017.
+
+![MongoDB Connection in Compass](media/mongodb-connection.png)
 
 # Tools and Technologies
 
