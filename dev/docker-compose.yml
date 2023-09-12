@@ -19,7 +19,7 @@ services:
       - '4040:4040'
     volumes:
       #- "./container-data/sparkData:/opt/spark:rw"
-      - "/var/CS4010/container-data/jupyterData/Spark:/home/jovyan/Spark/:rw"
+      - "./container-data/jupyterData/Spark:/home/jovyan/Spark/:rw"
   spark-worker:
     image: docker.io/bitnami/spark:3.4
     environment:
@@ -33,7 +33,7 @@ services:
       - SPARK_SSL_ENABLED=no
       - SPARK_USER=spark
     volumes:
-      - "/var/CS4010/container-data/jupyterData/Spark:/home/jovyan/Spark/:rw"
+      - "./container-data/jupyterData/Spark:/home/jovyan/Spark/:rw"
     depends_on:
       - spark
 
