@@ -15,7 +15,9 @@
   "road_conditions": "Tørr, bar veg",
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
-  "road_width": "15,4",
+  "road_width": {
+    "$numberDouble": "15.4"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Ukjent",
   "lon": {
@@ -43,6 +45,9 @@
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Vanlig kjørefelt",
   "lon": {
     "$numberDouble": "10.760100208019608"
@@ -68,7 +73,9 @@
   "road_conditions": "Våt, bar veg",
   "lighting_conditions": "Mørkt med vegbelysning",
   "road_lights": "Ja",
-  "road_width": "15,4",
+  "road_width": {
+    "$numberDouble": "15.4"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Vanlig kjørefelt",
   "lon": {
@@ -96,6 +103,9 @@
   "lighting_conditions": "Dagslys",
   "road_lights": "Ukjent",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Vanlig kjørefelt",
   "lon": {
     "$numberDouble": "10.759686077233697"
@@ -121,7 +131,9 @@
   "road_conditions": "Våt, bar veg",
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
-  "road_width": "10,6",
+  "road_width": {
+    "$numberDouble": "10.6"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Vanlig kjørefelt",
   "lon": {
@@ -148,7 +160,9 @@
   "road_conditions": "Ukjent",
   "lighting_conditions": "Tussmørke, skumring",
   "road_lights": "Ukjent",
-  "road_width": "16,5",
+  "road_width": {
+    "$numberDouble": "16.5"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Vanlig kjørefelt",
   "lon": {
@@ -176,6 +190,9 @@
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Ukjent",
   "lon": {
     "$numberDouble": "10.755689174919725"
@@ -201,7 +218,9 @@
   "road_conditions": "Tørr, bar veg",
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
-  "road_width": "8",
+  "road_width": {
+    "$numberDouble": "8"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Kollektivfelt",
   "lon": {
@@ -229,6 +248,9 @@
   "lighting_conditions": "Tussmørke, skumring",
   "road_lights": "Ukjent",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Vanlig kjørefelt",
   "lon": {
     "$numberDouble": "10.759805464340214"
@@ -254,7 +276,9 @@
   "road_conditions": "Tørr, bar veg",
   "lighting_conditions": "Mørkt med vegbelysning",
   "road_lights": "Ja",
-  "road_width": "19,9",
+  "road_width": {
+    "$numberDouble": "19.9"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Vanlig kjørefelt",
   "lon": {
@@ -282,6 +306,9 @@
   "lighting_conditions": "Mørkt med vegbelysning",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Ukjent",
   "lon": {
     "$numberDouble": "10.758185781957152"
@@ -308,6 +335,9 @@
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Ukjent",
   "lon": {
     "$numberDouble": "10.762073618231282"
@@ -334,6 +364,9 @@
   "lighting_conditions": "Ukjent",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Ukjent",
   "lon": {
     "$numberDouble": "10.76181185098513"
@@ -359,7 +392,9 @@
   "road_conditions": "Tørr, bar veg",
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
-  "road_width": "10,9",
+  "road_width": {
+    "$numberDouble": "10.9"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Vanlig kjørefelt",
   "lon": {
@@ -386,7 +421,9 @@
   "road_conditions": "Våt, bar veg",
   "lighting_conditions": "Mørkt med vegbelysning",
   "road_lights": "Ja",
-  "road_width": "14",
+  "road_width": {
+    "$numberDouble": "14"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Ukjent",
   "lon": {
@@ -414,6 +451,9 @@
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Vanlig kjørefelt",
   "lon": {
     "$numberDouble": "10.761762766312527"
@@ -439,7 +479,9 @@
   "road_conditions": "Tørr, bar veg",
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
-  "road_width": "14,5",
+  "road_width": {
+    "$numberDouble": "14.5"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Ukjent",
   "lon": {
@@ -467,6 +509,9 @@
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
   "road_type": "Motorveg",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Flettefelt",
   "lon": {
     "$numberDouble": "10.759646840245452"
@@ -492,7 +537,9 @@
   "road_conditions": "Tørr, bar veg",
   "lighting_conditions": "Dagslys",
   "road_lights": "Ja",
-  "road_width": "10",
+  "road_width": {
+    "$numberDouble": "10"
+  },
   "road_type": "Vanlig veg/gate",
   "lane_type": "Ukjent",
   "lon": {
@@ -520,6 +567,9 @@
   "lighting_conditions": "Mørkt med vegbelysning",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Ukjent",
   "lon": {
     "$numberDouble": "10.755736789150362"
@@ -546,6 +596,9 @@
   "lighting_conditions": "Mørkt med vegbelysning",
   "road_lights": "Ja",
   "road_type": "Vanlig veg/gate",
+  "road_width": {
+    "$numberDouble": "0"
+  },
   "lane_type": "Vanlig kjørefelt",
   "lon": {
     "$numberDouble": "10.757898010960123"
