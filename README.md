@@ -1,8 +1,6 @@
 # CS4010 Project
 
-This is the repo for our project in CS4010.
-
-Our problem statement is ...
+In this project we have been working on gathering, transforming, storing and visualizing traffic data from the Norwegian Public Roads Administration, with the goal of seeing how speed, traffic volume and weather conditions affect each other and accidents. 
 
 # Table of Contents
 
@@ -60,6 +58,7 @@ If something problematic happens, and it may be beneficial to restart containers
 ### Notes about the containers
 
 There are several containers that should be up and running.
+
 | Container Name | Container Image | Notes | Access URI |
 | --- | --- | --- | --- |
 | mongodb | Mongo:7.0.0 | Official MongoDB image | mongodb://localhost:27017, this is accessible through MongoDB Compass |
