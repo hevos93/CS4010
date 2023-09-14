@@ -58,6 +58,7 @@ If something problematic happens, and it may be beneficial to restart containers
 ### Notes about the containers
 
 There are several containers that should be up and running.
+
 | Container Name | Container Image | Notes | Access URI |
 | --- | --- | --- | --- |
 | mongodb | Mongo:7.0.0 | Official MongoDB image | mongodb://localhost:27017, this is accessible through MongoDB Compass |
