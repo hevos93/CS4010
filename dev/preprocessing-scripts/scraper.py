@@ -1,4 +1,4 @@
-# Import statements
+# Importing libraries
 from gql import gql, Client
 from gql.transport.aiohttp import AIOHTTPTransport
 import pandas
@@ -53,34 +53,29 @@ QUERY = gql(
 """
 )
 
-# Functions 
+# Function to add four days to the input date, and return date in QUERY_TIME_FORMAT
 def plusFour(original_date: str):
     timedate_date = datetime.datetime.strptime(original_date, QUERY_TIME_FORMAT)
     plusfive_date = timedate_date + datetime.timedelta(days=4)
     string_plusfive = plusfive_date.strftime(QUERY_TIME_FORMAT)
     return string_plusfive
 
-
-
-
 # Main script
 transport = AIOHTTPTransport(url=URL)
 client = Client(transport=transport, fetch_schema_from_transport=True)
 
 counter = 0
+
+# For every TRP, get data
 for TRPID in TRPIDS:
     dataset = []
     datetime_fromTime = datetime.datetime(year=2020, month=1, day=1, hour=0, minute=0, second=0)
     query_fromTime = datetime_fromTime.strftime(QUERY_TIME_FORMAT)
     datetime_toTime = datetime.datetime(year=2020, month=1, day=4, hour=0, minute=0, second=0)
-    query_toTime = datetime_toTime.strftime(QUERY_TIME_FORMAT)
-
-    #print(datetime_fromTime.tzinfo)
-    #print(query_fromTime)
-    #print(query_toTime)
-    
+    query_toTime = datetime_toTime.strftime(QUERY_TIME_FORMAT) 
     limit = False
 
+    # Continue querying the API for data as long as we have not exceeded the end timestamp
     while limit == False:
         print(TRPID + ":\t" , counter)
         params = {
@@ -108,8 +103,6 @@ for TRPID in TRPIDS:
             except TypeError as e:
                 print("ERROR: " , e)
                 continue
-            #print(fromTime)
-            #print(toTime)
             data = [id, shortForm, fromTime, toTime, coverage, volume, lon, lat]
             dataset.append(data)
         
@@ -125,7 +118,8 @@ for TRPID in TRPIDS:
         if check_fromTime > END_TIME:
             limit = True
 
-        sleep(1) # This is here so the connection is not dropped at the server end.
+        sleep(1) # Included so the connection is not dropped at the server end.
         counter = counter + 1
 
+    # Write the dataset dataframe to csv, writing a csv file for each TRP
     pandas.DataFrame(dataset).to_csv(TRPID+".csv", header = ["trpid", "roadReference", "fromTime", "toTime", "coverage", "volume", "lon", "lat"], index=False)
