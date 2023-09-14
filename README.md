@@ -1,8 +1,6 @@
 # CS4010 Project
 
-This is the repo for our project in CS4010.
-
-Our problem statement is ...
+In this project we have been working on gathering, transforming, storing and visualizing traffic data from the Norwegian Public Roads Administration, with the goal of seeing how speed, traffic volume and weather conditions affect each other and accidents. 
 
 # Table of Contents
 
